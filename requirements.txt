@@ -1,0 +1,11 @@
+Flask==3.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-Login==0.6.3
+Flask-Migrate==4.0.5
+psycopg2-binary==2.9.9
+python-dotenv==1.1.1
+pandas
+Werkzeug==3.0.1
+gunicorn==21.2.0 
+streamlit==1.29.0
+plotly==5.18.0
