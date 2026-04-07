@@ -266,44 +266,52 @@ with col_a:
                  .sum().reset_index()
                  .rename(columns={"total": "revenue"}))
 
-    fig_line = px.line(
-        monthly, x="month", y="revenue",
-        markers=True,
-        line_shape="spline",          # smooth curves
-        color_discrete_sequence=["#00d4ff"]
-    )
-    fig_line.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        yaxis_tickformat="$,.0f",
-        xaxis_title="Month",
-        yaxis_title="Revenue"
-    )
-    st.plotly_chart(fig_line, use_container_width=True)
+    if len(monthly) > 0:
+        fig_line = px.line(
+            monthly, x="month", y="total",
+            markers=True,
+            line_shape="spline",          # smooth curves
+            title="Monthly Revenue Trend"
+            color_discrete_sequence=["#00d4ff"]
+        )
+        fig_line.update_layout(
+            height=400,
+            plot_bgcolor="rgba(0,0,0,0)",
+            yaxis_tickformat="$,.0f",
+            xaxis_title="Month",
+            yaxis_title="Revenue"
+        )
+        st.plotly_chart(fig_line, use_container_width=True)
+    else:
+        st.info("No data available for the selected filters.")
+        
 
 with col_b:
     st.subheader("Sales by Category")
     cat_rev = (df.groupby("category")["total"]
                  .sum().reset_index()
                  .sort_values("total", ascending=False))
-
-    fig_donut = px.pie(
-        cat_rev, values="total", names="category",
-        hole=0.65,                      # 70% hole = donut
-        color_discrete_sequence=[
-            "#00d4ff","#a855f7","#10b981",
-            "#f59e0b","#f43f5e","#6366f1"
-        ]
-    )
-    fig_donut.update_traces(
-        textinfo="percent+label",
-        textposition="inside"
-    )
-    fig_donut.update_layout(
-        plot_bgcolor="rgba(0,0,0,0)",
-        showlegend=False
-    )
-    st.plotly_chart(fig_donut, use_container_width=True)
-
+    if len(cat_rev) > 0:
+        fig_donut = px.pie(
+            cat_rev, values="total", names="category",
+            hole=0.65,                      # 70% hole = donut
+            color_discrete_sequence=[
+                "#00d4ff","#a855f7","#10b981",
+                "#f59e0b","#f43f5e","#6366f1"
+            ]
+        )
+        fig_donut.update_traces(
+            textinfo="percent+label",
+            textposition="inside"
+        )
+        fig_donut.update_layout(
+            height=400,
+            plot_bgcolor="rgba(0,0,0,0)",
+            showlegend=False
+        )
+        st.plotly_chart(fig_donut, use_container_width=True)
+    else:
+        st.info("No data available for the selected filters.")
 # ===================== RECENT SALES ========================
 # data table + advanced SQL tabs
 st.markdown("---")
@@ -371,10 +379,16 @@ with tab3:    # bar chart by region
     rdata = (df.groupby("region")["total"]
                .sum().reset_index()
                .sort_values("total", ascending=False))
-    fig_bar = px.bar(rdata, x="region", y="total",
+    if len(rdata) > 0:
+        fig_bar = px.bar(rdata, x="region", y="total", title="Revenue by Region"
         color_discrete_sequence=["#a855f7"])
-    st.plotly_chart(fig_bar, use_container_width=True)
-    
+        st.plotly_chart(fig_bar, use_container_width=True)
+    else:
+        st.info("No data available for the selected filters.")
+
+if len(df)==0:
+    st.warning("⚠️ No data found for the selected filters. Please change the date range or filters.")
+    st.stop()
 # ================== MANAGE PRODUCTS =======================
 # product CRUD (Create + Delete)
 st.markdown("---")
