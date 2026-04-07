@@ -268,7 +268,7 @@ with col_a:
 
     if len(monthly) > 0:
         fig_line = px.line(
-            monthly, x="month", y="total",
+            monthly, x="month", y="revenue",
             markers=True,
             line_shape="spline",          # smooth curves
             title="Monthly Revenue Trend",
