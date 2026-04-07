@@ -364,7 +364,14 @@ with tab1:    # RANK() window function
             ORDER BY p.category, rank_in_category
         """), conn)
     st.dataframe(ranked, use_container_width=True,
-                 hide_index=True)
+                 height=380, hide_index=True, 
+                 column_config={
+                     "name": st.column_config.TextColumn("Product Name", width=200),
+                     "category": st.column_config.TextColumn("Category", width=150),
+                     "revenue": st.column_config.NumberColumn("Revenue ($)", format="%.2f", width=150),
+                     "rank_in_category": st.column_config.NumberColumn("Rank", width=80),
+                 }
+    )
 
 with tab2:    # CTE with LAG() for month-over-month growth
     with engine.connect() as conn:
@@ -410,8 +417,16 @@ tab_view, tab_add, tab_del = st.tabs([
 
 with tab_view:
     prods = pd.read_sql(text("SELECT * FROM products ORDER BY name"), engine)
-    st.dataframe(prods, use_container_width=True,
-                 hide_index=True)
+    st.dataframe(prods, use_container_width=True, 
+                 height=400, hide_index=True,
+                 column_config={
+                     "id": st.column_config.NumberColumn("ID", width=50),
+                     "name": st.column_config.TextColumn("Product Name", width=200),
+                     "category": st.column_config.TextColumn("Category", width=150),
+                     "price": st.column_config.NumberColumn("Price ($)", format="%.2f", width=100),
+                     "stock": st.column_config.NumberColumn("Stock", width=80),
+                 }
+    )
 
 with tab_add:
     st.write("Add a new product to the database")
