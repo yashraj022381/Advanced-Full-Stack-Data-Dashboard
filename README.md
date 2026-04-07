@@ -38,24 +38,24 @@
  ### Login and Registration
   ![Login Page] (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_165647.jpg)
   
-  ![Register Page] (screenshots/20260407_165848.jpg)
+  ![Register Page] (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_165848.jpg)
 
  ### Main Dashboard
-  ![Analytics Dashboard] (screenshots/20260407_170053.jpg)
+  ![Analytics Dashboard] (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_170053.jpg)
 
  ### Charts
-  ![Monthly Revenue & Sales by Category] (screenshots/20260407_170455.jpg)
+  ![Monthly Revenue & Sales by Category] (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_170455.jpg)
 
  ### Advanced Features
-  ![Advanced Analytics] (screenshots/20260407_171118.jpg)
+  ![Advanced Analytics] (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_171118.jpg)
   
-  ![Recent Sales] (screenshots/20260407_170913.jpg)
-                  (screenshots/20260407_171011.jpg)
+  ![Recent Sales] (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_170913.jpg)
+                  (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_171011.jpg)
 
-  ![Manage Products] (screenshots/20260407_171427.jpg)
-                     (screenshots/20260407_171519.jpg)
-                     (screenshots/20260407_171614.jpg)
-                     (screenshots/20260407_171706.jpg)
+  ![Manage Products] (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_171427.jpg)
+                     (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_171519.jpg)
+                     (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_171614.jpg)
+                     (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/blob/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd/screenshots/20260407_171706.jpg)
                      
 ## 🗄️ Database
 
