@@ -271,7 +271,7 @@ with col_a:
             monthly, x="month", y="total",
             markers=True,
             line_shape="spline",          # smooth curves
-            title="Monthly Revenue Trend"
+            title="Monthly Revenue Trend",
             color_discrete_sequence=["#00d4ff"]
         )
         fig_line.update_layout(
