@@ -380,7 +380,7 @@ with tab3:    # bar chart by region
                .sum().reset_index()
                .sort_values("total", ascending=False))
     if len(rdata) > 0:
-        fig_bar = px.bar(rdata, x="region", y="total", title="Revenue by Region"
+        fig_bar = px.bar(rdata, x="region", y="total", title="Revenue by Region",
         color_discrete_sequence=["#a855f7"])
         st.plotly_chart(fig_bar, use_container_width=True)
     else:
