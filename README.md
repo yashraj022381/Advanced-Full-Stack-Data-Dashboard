@@ -36,7 +36,7 @@
 ## 📸 Screenshots
 
  ### Login and Registration
-  ![Login Page] (screenshots/20260407_165647.jpg)
+  ![Login Page] (https://github.com/yashraj022381/Advanced-Full-Stack-Data-Dashboard/commit/f62ab6f9fab952e7ddb8359fef142ae5cd5300fd#diff-18719e7b510d599d72804f20f808324a35ea250ac0a08a7a1e83f339ed8d9ac7)
   
   ![Register Page] (screenshots/20260407_165848.jpg)
 
