@@ -285,7 +285,11 @@ with col_a:
     else:
         st.info("No data available for the selected filters.")
         
-
+    # Safety check
+    if len(df) == 0:
+        st.warning("⚠️ No data found for the selected filters. Please change the date range or filters.")
+        st.stop()
+    
 with col_b:
     st.subheader("Sales by Category")
     cat_rev = (df.groupby("category")["total"]
@@ -312,6 +316,11 @@ with col_b:
         st.plotly_chart(fig_donut, use_container_width=True)
     else:
         st.info("No data available for the selected filters.")
+        
+    # Safety check
+    if len(df) == 0:
+        st.warning("⚠️ No data found for the selected filters. Please change the date range or filters.")
+        st.stop()
 # ===================== RECENT SALES ========================
 # data table + advanced SQL tabs
 st.markdown("---")
