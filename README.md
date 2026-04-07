@@ -35,8 +35,26 @@
 
 ## 📸 Screenshots
 
+ ### Login and Registration
+  ![Login Page] (screenshots/20260407_165647.jpg)
+  ![Register Page] (screenshots/20260407_165848.jpg)
 
+ ### Main Dashboard
+  ![Analytics Dashboard] (screenshots/20260407_170053.jpg)
 
+ ### Charts
+  ![Monthly Revenue & Sales by Category] (screenshots/20260407_170455.jpg)
+
+ ### Advanced Features
+  ![Advanced Analytics] (screenshots/20260407_171118.jpg)
+  
+  ![Recent Sales] (screenshots/20260407_170913.jpg)
+                  (screenshots/20260407_171011.jpg)
+
+  ![Manage Products] (screenshots/20260407_171427.jpg)
+                     (screenshots/20260407_171519.jpg)
+                     (screenshots/20260407_171614.jpg)
+                     (screenshots/20260407_171706.jpg)
 ## 🗄️ Database
 
 - Hosted on **Supabase** (PostgreSQL)
