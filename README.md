@@ -37,6 +37,7 @@
 
  ### Login and Registration
   ![Login Page] (screenshots/20260407_165647.jpg)
+  
   ![Register Page] (screenshots/20260407_165848.jpg)
 
  ### Main Dashboard
@@ -55,6 +56,7 @@
                      (screenshots/20260407_171519.jpg)
                      (screenshots/20260407_171614.jpg)
                      (screenshots/20260407_171706.jpg)
+                     
 ## 🗄️ Database
 
 - Hosted on **Supabase** (PostgreSQL)
