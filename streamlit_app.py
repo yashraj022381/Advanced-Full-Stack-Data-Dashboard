@@ -394,10 +394,11 @@ with tab3:    # bar chart by region
         st.plotly_chart(fig_bar, use_container_width=True)
     else:
         st.info("No data available for the selected filters.")
-
-if len(df)==0:
-    st.warning("⚠️ No data found for the selected filters. Please change the date range or filters.")
-    st.stop()
+        
+    # Safety Check
+    if len(df)==0:
+        st.warning("⚠️ No data found for the selected filters. Please change the date range or filters.")
+        st.stop()
 # ================== MANAGE PRODUCTS =======================
 # product CRUD (Create + Delete)
 st.markdown("---")
