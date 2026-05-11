@@ -38,10 +38,14 @@ def get_engine():
     return engine
 
 engine = get_engine()
-
-with engine.connect() as conn:
-    db.metadata.create_all(engine)
-    print("Tables checked/created")
+try:
+    with engine.connect() as conn:
+        db.metadata.create_all(engine)
+        print("Tables checked/created")
+except Exception as e:
+    st.error(f"Database connection failed: {e}")
+    st.info("Please check your DATABASE_URL in streamlit secrets.")
+    st.stop()
 
 # ====================== SESSION STATE ======================
 if "authenticated" not in st.session_state:
