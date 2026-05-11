@@ -21,21 +21,35 @@ st.set_page_config(
 # @st.cache_resource = create connection ONCE, reuse forever
 @st.cache_resource(show_spinner="Connecting to database...")
 def get_engine():
-    db_url = st.secrets["DATABASE_URL"]
+    try:
+        db_url = os.environ.get("DATABASE_URL")
+        if not db_url:
+            db_url = st.secrets["DATABASE_URL"]
+
+        if db_url.startswith("postgres://"):
+            db_url=db_url.replace("postgres://", "postgresql://", 1)
     # Add timeout and keepalive to help with proxy issues
-    if "?" not in db_url:
-        db_url += "?connect_timeout=20&keepalives=1&keepalives_idle=30"
-    else:
-        db_url += "&connect_timeout=20&keepalives=1&keepalives_idle=30"
+    #if "?" not in db_url:
+    #    db_url += "?connect_timeout=20&keepalives=1&keepalives_idle=30"
+    #else:
+     #   db_url += "&connect_timeout=20&keepalives=1&keepalives_idle=30"
         
-    engine = create_engine(
-        db_url,
-        pool_pre_ping=True,
-        pool_recycle=300,
-        pool_size=5,
-        max_overflow=10
-    )
-    return engine
+        engine = create_engine(
+            db_url,
+            pool_pre_ping=True,
+            pool_recycle=300,
+            #pool_size=5,
+            #max_overflow=10
+            connect_args={
+              "sslmode": "require",
+              "connect_timeout": 30,
+            }
+        )
+        return engine
+    except Exception as e:
+        st.error(f"Failed to create engine: {e}")
+        st.stop()
+    
 
 engine = get_engine()
 try:
