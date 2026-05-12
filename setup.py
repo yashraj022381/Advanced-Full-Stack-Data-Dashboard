@@ -3,7 +3,7 @@ from app import app, db
 from models import User
 
 # Change this to YOUR Neon URL
-os.environ["DATABASE_URL"] = "postgresql://username:password@ep-xxx.us-east-2.aws.neon.tech/neondb?sslmode=require"
+os.environ["DATABASE_URL"] = "postgresql://neondb_owner:npg_J4XPGqNfC6Hl@ep-icy-shadow-ap159j2b-pooler.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 
 with app.app_context():
     db.create_all()
