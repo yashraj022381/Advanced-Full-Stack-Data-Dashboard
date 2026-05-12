@@ -381,7 +381,7 @@ with tab1:    # RANK() window function
             GROUP BY p.name, p.category
             ORDER BY p.category, rank_in_category
         """), conn)
-    st.dataframe(ranked, width=,"stretch"
+    st.dataframe(ranked, width="stretch",
                  height=380, hide_index=True, 
                  column_config={
                      "name": st.column_config.TextColumn("Product Name", width=200),
