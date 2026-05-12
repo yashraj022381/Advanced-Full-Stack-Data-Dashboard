@@ -1,4 +1,5 @@
 # Part 1: imports, DB connection, data loading
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
