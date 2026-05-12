@@ -75,7 +75,7 @@ def login_page():
     col1, col2 = st.columns(2)
     
     with col1:
-        if st.button("Login", type="primary", use_container_width=True):
+        if st.button("Login", type="primary", width="stretch"):
             with engine.connect() as conn:
                 user_row = conn.execute(text("""
                     SELECT id, username, password_hash
@@ -101,7 +101,7 @@ def login_page():
 
             
     with col2:
-        if st.button("Register New User", use_container_width=True):
+        if st.button("Register New User", width="stretch"):
             st.session_state.show_register = True
             st.rerun()
             
@@ -299,7 +299,7 @@ with col_a:
             xaxis_title="Month",
             yaxis_title="Revenue"
         )
-        st.plotly_chart(fig_line, use_container_width=True)
+        st.plotly_chart(fig_line, width="stretch")
     else:
         st.info("No data available for the selected filters.")
         
@@ -331,7 +331,7 @@ with col_b:
             plot_bgcolor="rgba(0,0,0,0)",
             showlegend=False
         )
-        st.plotly_chart(fig_donut, use_container_width=True)
+        st.plotly_chart(fig_donut, width="stretch")
     else:
         st.info("No data available for the selected filters.")
         
@@ -381,7 +381,7 @@ with tab1:    # RANK() window function
             GROUP BY p.name, p.category
             ORDER BY p.category, rank_in_category
         """), conn)
-    st.dataframe(ranked, use_container_width=True,
+    st.dataframe(ranked, width=,"stretch"
                  height=380, hide_index=True, 
                  column_config={
                      "name": st.column_config.TextColumn("Product Name", width=200),
@@ -406,7 +406,7 @@ with tab2:    # CTE with LAG() for month-over-month growth
               ) AS growth_pct
             FROM monthly ORDER BY month
         """), conn)
-    st.dataframe(growth,use_container_width=True,
+    st.dataframe(growth,width="stretch",
                  hide_index=True)
 
 with tab3:    # bar chart by region
@@ -416,7 +416,7 @@ with tab3:    # bar chart by region
     if len(rdata) > 0:
         fig_bar = px.bar(rdata, x="region", y="total", title="Revenue by Region",
         color_discrete_sequence=["#a855f7"])
-        st.plotly_chart(fig_bar, use_container_width=True)
+        st.plotly_chart(fig_bar, width="stretch")
     else:
         st.info("No data available for the selected filters.")
         
@@ -435,7 +435,7 @@ tab_view, tab_add, tab_del = st.tabs([
 
 with tab_view:
     prods = pd.read_sql(text("SELECT * FROM products ORDER BY name"), engine)
-    st.dataframe(prods, use_container_width=True, 
+    st.dataframe(prods, width="stretch", 
                  height=400, hide_index=True,
                  column_config={
                      "id": st.column_config.NumberColumn("ID", width=50),
